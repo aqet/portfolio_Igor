@@ -1,0 +1,26 @@
+.about {
+  background: #1b263b;
+  padding: 5rem 6%;
+  color: white;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .stats {
+    margin-top: 2rem;
+    display: flex;
+    gap: 4rem;
+
+    div {
+      h3 {
+        font-size: 2.2rem;
+        color: #fca311;
+      }
+      span {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

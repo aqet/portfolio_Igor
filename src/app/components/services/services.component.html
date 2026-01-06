@@ -1,0 +1,14 @@
+<section class="services">
+  <div class="section-header">
+    <span class="eyebrow">What I do</span>
+    <h2>Services</h2>
+  </div>
+
+  <div class="services-grid">
+    <article class="service-card" *ngFor="let s of services">
+      <div class="icon">{{ s.icon }}</div>
+      <h3>{{ s.title }}</h3>
+      <p>{{ s.desc }}</p>
+    </article>
+  </div>
+</section>

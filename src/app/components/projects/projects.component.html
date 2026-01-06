@@ -1,0 +1,12 @@
+<section class="projects" @fade>
+  <h2>Projects</h2>
+
+  <div class="grid">
+    <div class="card" *ngFor="let p of projects">
+      <img [src]="p.img" alt="">
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.desc }}</p>
+      <button>Voir project</button>
+    </div>
+  </div>
+</section>
