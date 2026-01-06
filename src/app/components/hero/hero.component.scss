@@ -3,6 +3,7 @@
   padding: 0 6% 4rem 6%;
   background: linear-gradient(135deg, #020817, #0f172a);
   position: relative;
+  display: flex;
 }
 
 /* NAVBAR STICKY */
@@ -13,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 0;
+  padding: 1.2rem;
   transition: background 0.3s ease, box-shadow 0.3s ease;
   backdrop-filter: blur(10px);
 
@@ -115,6 +116,7 @@
   justify-content: space-between;
   gap: 3rem;
   color: #f9fafb;
+  width: 100%;
 
   .left {
     max-width: 480px;
@@ -174,7 +176,7 @@
   .right {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: end;
 
     .avatar-wrapper {
       position: relative;
