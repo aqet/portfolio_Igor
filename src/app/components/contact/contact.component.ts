@@ -1,6 +1,8 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import emailjs from '@emailjs/browser';
+
 interface ContactForm {
   name: string;
   email: string;
@@ -24,6 +26,12 @@ export class ContactComponent {
   submitted = false;
 
   submitForm(): void {
+
+emailjs.send("service_hxeon35","template_eh2xmup", this.form as unknown as Record<string, unknown>, {
+  publicKey: "UMfIOzuGWiwTlCxLp"
+})
+    console.log(this.form)
+
     if (!this.form.name || !this.form.email || !this.form.message) {
       alert('Merci de remplir tous les champs.');
       return;
