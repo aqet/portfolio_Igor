@@ -37,7 +37,7 @@ type Block = { title: string; desc: string; cta: string };
 export class AppComponent {
   // ======= DATA =======
   hero = {
-    name: 'Jensen Omega',
+    name: 'TIENTCHEU Igor',
     role: 'Software Developer',
     tagline: 'Hello. I’m Jensen — I build clean, fast and friendly web apps.'
   };

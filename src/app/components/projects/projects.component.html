@@ -1,12 +1,86 @@
-<section class="projects" @fade>
-  <h2>Projects</h2>
+<section class="projects" @fade id="projects">
+  <div class="container">
+    <div class="section-header">
+      <!-- <span class="section-tag">Portfolio</span> -->
+      <h2>Mes Projets Réalisés</h2>
+      <p class="section-subtitle">
+        Découvrez une sélection de mes réalisations récentes et les technologies utilisées
+      </p>
+    </div>
 
-  <div class="grid">
-    <div class="card" *ngFor="let p of projects">
-      <img [src]="p.img" alt="">
-      <h3>{{ p.title }}</h3>
-      <p>{{ p.desc }}</p>
-      <button>Voir project</button>
+    <div class="projects-showcase">
+      <div class="project-item" *ngFor="let p of projects; let i = index" [class.reverse]="i % 2 === 1">
+        <div class="project-visual">
+          <div class="project-image">
+            <img [src]="p.img" [alt]="p.title">
+            <div class="project-overlay">
+              <div class="project-links">
+                <button class="link-btn demo" *ngIf="p.demoUrl">
+                  <span>Demo</span>
+                  <i>🔗</i>
+                </button>
+                <a href="{{p.codeUrl}}" class="link-btn code" *ngIf="p.codeUrl">
+                  <span>Code</span>
+                  <i>📁</i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <div class="project-number">0{{ i + 1 }}</div>
+          <div class="project-header">
+            <h3>{{ p.title }}</h3>
+            <!-- <div class="project-status" [class]="p.status">{{ p.statusLabel }}</div> -->
+          </div>
+          
+          <p class="project-description">{{ p.desc }}</p>
+          
+          <div class="project-features">
+            <div class="feature" *ngFor="let feature of p.features">
+              <span class="check">✓</span>
+              <span>{{ feature }}</span>
+            </div>
+          </div>
+
+          <div class="project-tech">
+            <span class="tech-tag" *ngFor="let tech of p.technologies">{{ tech }}</span>
+          </div>
+
+          <div class="project-footer">
+            <div class="project-date">{{ p.date }}</div>
+            <a href="{{p.codeUrl}}" class="project-btn">
+              <span>Voir détails</span>
+              <i class="arrow">→</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="projects-stats">
+      <div class="stat">
+        <div class="stat-number">{{ projects.length }}+</div>
+        <div class="stat-label">Projets terminés</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Clients satisfaits</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">24h</div>
+        <div class="stat-label">Temps de réponse</div>
+      </div>
+    </div> -->
+
+    <div class="cta-section">
+      <h3>Vous avez un projet en tête ?</h3>
+      <p>Transformons ensemble vos idées en réalité digitale</p>
+      <button class="cta-btn">
+        <span (click)="scrollTo('contact')">Discutons de votre projet</span>
+        <i class="arrow">→</i>
+      </button>
     </div>
   </div>
 </section>

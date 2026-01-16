@@ -1,14 +1,85 @@
-<section class="services">
-  <div class="section-header">
-    <span class="eyebrow">What I do</span>
-    <h2>Services</h2>
-  </div>
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <!-- <span class="section-tag">Services</span> -->
+      <h2>Ce que je peux faire pour vous</h2>
+      <p class="section-subtitle">
+        Des solutions complètes pour transformer vos idées en applications web performantes
+      </p>
+    </div>
 
-  <div class="services-grid">
-    <article class="service-card" *ngFor="let s of services">
-      <div class="icon">{{ s.icon }}</div>
-      <h3>{{ s.title }}</h3>
-      <p>{{ s.desc }}</p>
-    </article>
+    <div class="services-grid">
+      <article class="service-card" *ngFor="let s of services; let i = index">
+        <div class="card-header">
+          <div class="icon-wrapper">
+            <div class="icon">{{ s.icon }}</div>
+          </div>
+          <div class="service-number">0{{ i + 1 }}</div>
+        </div>
+        
+        <div class="card-content">
+          <h3>{{ s.title }}</h3>
+          <p class="description">{{ s.desc }}</p>
+          
+          <div class="features">
+            <div class="feature" *ngFor="let feature of s.features">
+              <span class="check">✓</span>
+              <span>{{ feature }}</span>
+            </div>
+          </div>
+          
+          <div class="technologies">
+            <span class="tech-label">Technologies:</span>
+            <div class="tech-tags">
+              <span class="tech-tag" *ngFor="let tech of s.technologies">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <button class="service-btn">
+            <span>En savoir plus</span>
+            <i class="arrow">→</i>
+          </button>
+        </div>
+      </article>
+    </div>
+
+    <div class="process-section">
+      <h3>Mon processus de travail</h3>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Analyse</h4>
+            <p>Étude de vos besoins</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Design</h4>
+            <p>Création des maquettes</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Développement</h4>
+            <p>Codage et tests</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Déploiement</h4>
+            <p>Mise en production</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

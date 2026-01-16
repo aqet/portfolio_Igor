@@ -55,7 +55,7 @@ export class HeroComponent {
   }
 
   toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
+    this.isMobile = !this.isMobile;
   }
 
   closeMenu(): void {

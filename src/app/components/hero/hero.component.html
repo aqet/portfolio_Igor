@@ -1,20 +1,20 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="logo">TIENTCHEU Igor</div>
 
-  <ul class="nav-links" *ngIf="!isMobile || isMenuOpen">
-    <li (click)="scrollTo('top'); closeMenu()">Home</li>
-    <li (click)="scrollTo('about'); closeMenu()">About</li>
+  <ul class="nav-links" *ngIf="!isMobile">
+    <li (click)="scrollTo('top'); closeMenu()">Accueil</li>
+    <li (click)="scrollTo('about'); closeMenu()">À propos</li>
     <li (click)="scrollTo('services'); closeMenu()">Services</li>
-    <li (click)="scrollTo('projects'); closeMenu()">Projects</li>
+    <li (click)="scrollTo('projects'); closeMenu()">Projets</li>
     <li (click)="scrollTo('contact'); closeMenu()">Contact</li>
   </ul>
 
   <div class="nav-right">
     <button class="theme-toggle" (click)="toggleTheme()">
-      {{ currentTheme === 'dark' ? 'Light' : 'Dark' }} mode
+      {{ currentTheme === 'dark' ? 'Clair' : 'Sombre' }}
     </button>
 
-    <button class="burger-menu" *ngIf="isMobile" (click)="toggleMenu()" [class.active]="isMenuOpen">
+    <button class="burger-menu" (click)="toggleMenu()" [class.active]="!isMobile">
       <span></span>
       <span></span>
       <span></span>
@@ -26,11 +26,11 @@
   <div class="hero-content" id="top">
     <div class="left">
       <div class="greeting">
-        <span class="wave">👋</span>
-        <h2>Hello, I'm</h2>
+        <!-- <span class="wave">👋</span> -->
+        <h2>Bonjour, je suis</h2>
       </div>
       <h1>TIENTCHEU Igor</h1>
-      <h3>Full Stack Developer</h3>
+      <h3>Développeur Full Stack</h3>
 
       <p class="subtitle">
         Passionné par le développement web moderne, je crée des solutions digitales innovantes
@@ -38,8 +38,9 @@
       </p>
 
       <div class="skills-preview">
-        <span class="skill">React</span>
         <span class="skill">Angular</span>
+        <span class="skill">React</span>
+        <span class="skill">NestJs</span>
         <span class="skill">Node.js</span>
         <span class="skill">TypeScript</span>
       </div>
@@ -69,7 +70,7 @@
     <div class="right">
       <div class="avatar-wrapper">
         <div class="avatar">
-          <img src="/WhatsApp_Image_2025-12-11_at_13.40.43_2e9eb414-removebg-preview.png" alt="Igor TIENTCHEU"/>
+          <img src="me.png" alt="Igor TIENTCHEU"/>
         </div>
         <div class="ring"></div>
         <div class="floating-elements">
@@ -77,6 +78,7 @@
           <div class="element react"> <img src="/angular.png" alt=""></div>
           <div class="element node"> <img src="/nextjs.png" alt=""></div>
           <div class="element mongoosedb"> <img src="/mongoosedb.png" alt=""></div>
+          <div class="element github"> <img src="/github.png" alt=""></div>
         </div>
       </div>
     </div>
