@@ -44,31 +44,32 @@ export class ProjectsComponent {
       date: 'janvier 2026',
       demoUrl: '',
       codeUrl: 'https://github.com/aqet/todo-app-nestjs'
-    },
-    {
-      title: 'Portfolio Website',
-      desc: 'Site portfolio moderne et responsive avec animations fluides et design professionnel.',
-      img: 'projet.png',
-      features: ['Animations CSS', 'SEO optimisé', 'Contact form', 'Blog intégré'],
-      technologies: ['Angular', 'SCSS', 'TypeScript', 'Firebase'],
-      status: 'in-progress',
-      statusLabel: 'En cours',
-      date: 'Janvier 2025',
-      demoUrl: '',
-      codeUrl: '#'
-    },
-    {
-      title: 'Weather Dashboard',
-      desc: 'Dashboard météo interactif avec prévisions détaillées et géolocalisation.',
-      img: 'projet.png',
-      features: ['API météo', 'Géolocalisation', 'Graphiques', 'Prévisions 7j'],
-      technologies: ['Vue.js', 'Chart.js', 'OpenWeather API', 'CSS3'],
-      status: 'completed',
-      statusLabel: 'Terminé',
-      date: 'Octobre 2024',
-      demoUrl: '',
-      codeUrl: '#'
     }
+    // ,
+    // {
+    //   title: 'Portfolio Website',
+    //   desc: 'Site portfolio moderne et responsive avec animations fluides et design professionnel.',
+    //   img: 'projet.png',
+    //   features: ['Animations CSS', 'SEO optimisé', 'Contact form', 'Blog intégré'],
+    //   technologies: ['Angular', 'SCSS', 'TypeScript', 'Firebase'],
+    //   status: 'in-progress',
+    //   statusLabel: 'En cours',
+    //   date: 'Janvier 2025',
+    //   demoUrl: '',
+    //   codeUrl: '#'
+    // },
+    // {
+    //   title: 'Weather Dashboard',
+    //   desc: 'Dashboard météo interactif avec prévisions détaillées et géolocalisation.',
+    //   img: 'projet.png',
+    //   features: ['API météo', 'Géolocalisation', 'Graphiques', 'Prévisions 7j'],
+    //   technologies: ['Vue.js', 'Chart.js', 'OpenWeather API', 'CSS3'],
+    //   status: 'completed',
+    //   statusLabel: 'Terminé',
+    //   date: 'Octobre 2024',
+    //   demoUrl: '',
+    //   codeUrl: '#'
+    // }
   ];
 
   scrollTo(sectionId: string): void {
