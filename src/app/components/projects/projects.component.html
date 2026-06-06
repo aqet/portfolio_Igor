@@ -11,21 +11,40 @@
     <div class="projects-showcase">
       <div class="project-item" *ngFor="let p of projects; let i = index" [class.reverse]="i % 2 === 1">
         <div class="project-visual">
-          <div class="project-image">
-            <img [src]="p.img" [alt]="p.title">
-            <div class="project-overlay">
-              <div class="project-links">
-                <button class="link-btn demo" *ngIf="p.demoUrl">
-                  <span>Demo</span>
-                  <i>🔗</i>
-                </button>
-                <a href="{{p.codeUrl}}" class="link-btn code" *ngIf="p.codeUrl">
-                  <span>Code</span>
-                  <i>📁</i>
-                </a>
-              </div>
+          <div class="project-gallery">
+            <div class="gallery-main">
+              <img [src]="selectedImages[i] || p.gallery[0]" [alt]="p.title" (click)="openPreview(selectedImages[i] || p.gallery[0])">
             </div>
+            
+            <div class="project-actions" *ngIf="p.demoUrl || p.codeUrlF || p.codeUrlB">
+              <a [href]="p.codeUrlF" class="link-btn code" *ngIf="p.codeUrlF">
+                <span>Code Frontend</span>
+                <i class="fa-solid fa-code" style="color: rgb(27, 27, 27);"></i>
+              </a>
+              <a [href]="p.codeUrlB" class="link-btn code" *ngIf="p.codeUrlB">
+                <span>Code Backend</span>
+                <i class="fa-solid fa-code" style="color: rgb(27, 27, 27);"></i>
+              </a>
+              <a [href]="p.demoUrl" class="link-btn demo" *ngIf="p.demoUrl">
+                <span>Demo</span>
+                <i>🔗</i>
+              </a>
+              <a [href]="p.siteUrl" class="link-btn demo" *ngIf="p.siteUrl">
+                <span>Site</span>
+                <i><i class="fa-solid fa-link" style="color: rgb(27, 27, 27);"></i></i>
+              </a>
+            </div>
+            
           </div>
+          <div class="gallery-thumbs" *ngIf="p.gallery.length > 1">
+              <img
+                *ngFor="let image of p.gallery"
+                [src]="image"
+                [alt]="p.title + ' aperçu'"
+                [class.active]="(selectedImages[i] || p.gallery[0]) === image"
+                (click)="setMainImage(i, image)"
+              >
+            </div>
         </div>
 
         <div class="project-info">
@@ -35,11 +54,25 @@
             <!-- <div class="project-status" [class]="p.status">{{ p.statusLabel }}</div> -->
           </div>
           
-          <p class="project-description">{{ p.desc }}</p>
+          <p class="project-description">{{ p.shortDesc }}</p>
+          <p class="project-detail-text">{{ p.longDescription }}</p>
+
+          <div class="project-highlights">
+            <div class="highlight-card">
+              <h4>Ce que fait ce projet</h4>
+              <p>{{ p.whyItMatters }}</p>
+            </div>
+            <div class="highlight-card">
+              <h4>Points clés</h4>
+              <ul>
+                <li *ngFor="let feature of p.features">{{ feature }}</li>
+              </ul>
+            </div>
+          </div>
           
           <div class="project-features">
             <div class="feature" *ngFor="let feature of p.features">
-              <span class="check">✓</span>
+              <span class="check"><i class="fa-regular fa-circle-check" style="color: rgb(249 115 22);"></i></span>
               <span>{{ feature }}</span>
             </div>
           </div>
@@ -48,13 +81,13 @@
             <span class="tech-tag" *ngFor="let tech of p.technologies">{{ tech }}</span>
           </div>
 
-          <div class="project-footer">
+          <!-- <div class="project-footer">
             <div class="project-date">{{ p.date }}</div>
-            <a href="{{p.codeUrl}}" class="project-btn">
+            <a [href]="p.codeUrl" class="project-btn">
               <span>Voir détails</span>
               <i class="arrow">→</i>
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -81,6 +114,13 @@
         <span (click)="scrollTo('contact')">Discutons de votre projet</span>
         <i class="arrow">→</i>
       </button>
+    </div>
+  </div>
+
+  <div class="image-preview-backdrop" *ngIf="previewImage" (click)="closePreview()">
+    <div class="image-preview-card" (click)="$event.stopPropagation()">
+      <button class="preview-close" type="button" (click)="closePreview()" aria-label="Fermer l’image">✕</button>
+      <img [src]="previewImage" alt="Aperçu en grand format">
     </div>
   </div>
 </section>

@@ -10,21 +10,21 @@ import { Component } from '@angular/core';
 export class ServicesComponent {
   services = [
     {
-      icon: '💻',
+      icon: 'fas fa-laptop-code',
       title: 'Développement Web',
       desc: 'Création d\'applications web modernes et responsives avec les dernières technologies.',
       features: ['Sites vitrines', 'Applications SPA', 'E-commerce', 'Dashboards'],
       technologies: ['React', 'Angular', 'TypeScript', 'CSS3']
     },
     {
-      icon: '📡',
+      icon: 'fas fa-server',
       title: 'API & Backend',
       desc: 'Développement d\'APIs robustes et d\'architectures backend scalables.',
       features: ['API REST', 'Base de données', 'Authentification', 'Sécurité'],
       technologies: ['NestJs', 'Node.js', 'MongoDB', 'PostgreSQL']
     },
     {
-      icon: '☁️',
+      icon: 'fas fa-cloud-arrow-up',
       title: 'Déploiement Cloud',
       desc: 'Mise en production et hébergement sur les plateformes cloud modernes.',
       features: ['CI/CD', 'Monitoring', 'Optimisation', 'Maintenance'],

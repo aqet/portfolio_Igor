@@ -12,7 +12,9 @@
       <article class="service-card" *ngFor="let s of services; let i = index">
         <div class="card-header">
           <div class="icon-wrapper">
-            <div class="icon">{{ s.icon }}</div>
+            <div class="icon" aria-hidden="true">
+              <i [class]="s.icon"></i>
+            </div>
           </div>
           <div class="service-number">0{{ i + 1 }}</div>
         </div>
@@ -23,7 +25,7 @@
           
           <div class="features">
             <div class="feature" *ngFor="let feature of s.features">
-              <span class="check">✓</span>
+              <span class="check"><i class="fa-regular fa-circle-check" style="color: rgb(249 115 22);"></i></span>
               <span>{{ feature }}</span>
             </div>
           </div>
@@ -39,7 +41,7 @@
         <div class="card-footer">
           <button class="service-btn">
             <span>En savoir plus</span>
-            <i class="arrow">→</i>
+            <i class="fa-solid fa-arrow-right-long"></i>
           </button>
         </div>
       </article>
