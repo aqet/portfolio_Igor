@@ -25,7 +25,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   projects = [
     {
-      title: 'Todo App Frontend',
+      title: 'TaskFlow Frontend',
       shortDesc:
         'Une interface moderne pour organiser, prioriser et suivre ses tâches en toute simplicité.',
       longDescription:
@@ -49,7 +49,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       siteUrl: '',
     },
     {
-      title: 'Todo App Backend',
+      title: 'TaskFlow Backend',
       shortDesc:
         'Une API robuste pour gérer les tâches, sécuriser les accès et automatiser les notifications.',
       longDescription:
