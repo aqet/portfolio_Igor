@@ -13,9 +13,10 @@
         <div class="project-visual">
           <div class="project-gallery">
             <div class="gallery-main">
-              <img [src]="selectedImages[i] || p.gallery[0]" [alt]="p.title" (click)="openPreview(selectedImages[i] || p.gallery[0])">
+              <img [src]="selectedImages[i] || p.gallery[0]" [alt]="p.title"
+                (click)="openPreview(selectedImages[i] || p.gallery[0])">
             </div>
-            
+
             <div class="project-actions" *ngIf="p.demoUrl || p.codeUrlF || p.codeUrlB">
               <a [href]="p.codeUrlF" class="link-btn code" *ngIf="p.codeUrlF">
                 <span>Code Frontend</span>
@@ -34,17 +35,12 @@
                 <i><i class="fa-solid fa-link" style="color: rgb(27, 27, 27);"></i></i>
               </a>
             </div>
-            
+
           </div>
           <div class="gallery-thumbs" *ngIf="p.gallery.length > 1">
-              <img
-                *ngFor="let image of p.gallery"
-                [src]="image"
-                [alt]="p.title + ' aperçu'"
-                [class.active]="(selectedImages[i] || p.gallery[0]) === image"
-                (click)="setMainImage(i, image)"
-              >
-            </div>
+            <img *ngFor="let image of p.gallery" [src]="image" [alt]="p.title + ' aperçu'"
+              [class.active]="(selectedImages[i] || p.gallery[0]) === image" (click)="setMainImage(i, image)">
+          </div>
         </div>
 
         <div class="project-info">
@@ -53,7 +49,7 @@
             <h3>{{ p.title }}</h3>
             <!-- <div class="project-status" [class]="p.status">{{ p.statusLabel }}</div> -->
           </div>
-          
+
           <p class="project-description">{{ p.shortDesc }}</p>
           <p class="project-detail-text">{{ p.longDescription }}</p>
 
@@ -69,7 +65,7 @@
               </ul>
             </div>
           </div>
-          
+
           <div class="project-features">
             <div class="feature" *ngFor="let feature of p.features">
               <span class="check"><i class="fa-regular fa-circle-check" style="color: rgb(249 115 22);"></i></span>
@@ -106,7 +102,14 @@
         <div class="stat-label">Temps de réponse</div>
       </div>
     </div> -->
-
+    <div class="cta-section">
+      <h3></h3>
+      <button class="cta-btn">
+        <span><a style="text-decoration: none; color: initial;" href="https://github.com/aqet?tab=repositories">Voir
+            plus sur mon GitHub</a></span>
+        <i class="arrow">→</i>
+      </button>
+    </div>
     <div class="cta-section">
       <h3>Vous avez un projet en tête ?</h3>
       <p>Transformons ensemble vos idées en réalité digitale</p>
