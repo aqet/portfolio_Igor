@@ -1,154 +1,118 @@
 <section class="about" @slideIn id="about">
   <div class="container">
-    <div class="section-header">
-      <!-- <span class="section-tag">À propos</span> -->
-      <h2>Qui suis-je ?</h2>
-      <p class="section-subtitle">
-        Développeur passionné avec une expertise technique solide et une approche centrée sur les résultats
-      </p>
-    </div>
 
-    <div class="about-content">
-      <div class="about-text">
-        <div class="intro">
-          <h3>TIENTCHEU Igor</h3>
-          <p class="role">Développeur Full Stack & Résolveur de Problèmes</p>
-        </div>
+    <div class="about-grid">
+      <!-- Colonne gauche -->
+      <div class="about-left">
+        <span class="section-label">// à propos</span>
+        <h2>Bâtir des apps <span class="grad">qui comptent</span></h2>
+        <p class="about-intro">
+          Développeur Full Stack avec 3+ ans d'expérience, je conçois des applications
+          web modernes de bout en bout - de l'interface utilisateur aux APIs et bases de données.
+        </p>
+        <p class="about-body">
+          J'apporte une approche pragmatique : code propre, architecture solide, et une
+          vraie attention à l'expérience utilisateur. Chaque projet est l'occasion de
+          résoudre un problème réel avec les meilleures technologies du moment.
+        </p>
 
-        <div class="description">
-          <p>
-            Avec plus de 3 ans d'expérience dans le développement web, je me spécialise dans la création 
-            d'applications modernes et performantes. Mon expertise couvre l'ensemble du stack technologique, 
-            du front-end interactif aux architectures back-end robustes.
-          </p>
-          
-          <p>
-            Je privilégie une approche pragmatique du développement, en mettant l'accent sur la qualité du code, 
-            l'expérience utilisateur et les performances. Chaque projet est une opportunité d'apporter des 
-            solutions innovantes et adaptées aux besoins spécifiques de mes clients.
-          </p>
-        </div>
-
-        <div class="highlights">
-          <div class="highlight">
-            <div class="icon"><i class="fa-solid fa-bullseye" style="color: rgb(249 115 22);"></i></div>
-            <div class="content">
-              <h4>Orienté résultats</h4>
-              <p>Solutions efficaces et mesurables</p>
-            </div>
+        <div class="about-pills">
+          <div class="pill">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>Orienté résultats</span>
           </div>
-          
-          <div class="highlight">
-            <div class="icon"><i class="fa-solid fa-chart-line" style="color: rgb(249 115 22);"></i></div>
-            <div class="content">
-              <h4>Performance optimisée</h4>
-              <p>Applications rapides et scalables</p>
-            </div>
+          <div class="pill">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Performance first</span>
           </div>
-          
-          <div class="highlight">
-            <div class="icon"><i class="fa-solid fa-microchip" style="color: rgb(249 115 22);"></i></div>
-            <div class="content">
-              <h4>Technologies modernes</h4>
-              <p>Stack technique à jour et éprouvé</p>
-            </div>
+          <div class="pill">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Fullstack</span>
           </div>
         </div>
       </div>
 
-      <div class="about-visual">
-        <div class="skills-grid">
-          <div class="skill-category">
+      <!-- Colonne droite -->
+      <div class="about-right">
+        <!-- Skills -->
+        <div class="skills-card glass">
+          <div class="skill-group">
             <h4>Frontend</h4>
-            <div class="skills">
-              <span class="skill">Angular</span>
-              <span class="skill">React</span>
-              <span class="skill">TypeScript</span>
-              <span class="skill">CSS3</span>
+            <div class="skill-chips">
+              <span>Angular 18</span>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>SCSS</span>
+              <span>PWA</span>
             </div>
           </div>
-          
-          <div class="skill-category">
+          <div class="skill-group">
             <h4>Backend</h4>
-            <div class="skills">
-              <span class="skill">NextJs</span>
-              <span class="skill">Node.js</span>
-              <span class="skill">MongoDB</span>
-              <span class="skill">MySQL</span>
+            <div class="skill-chips">
+              <span>NestJS</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+              <span>MySQL</span>
+              <span>REST API</span>
             </div>
           </div>
-          
-          <div class="skill-category">
-            <h4>Outils</h4>
-            <div class="skills">
-              <span class="skill">Git</span>
-              <span class="skill">Figma</span>
-              <!-- <span class="skill">Docker</span> -->
-              <!-- <span class="skill">AWS</span> -->
+          <div class="skill-group">
+            <h4>Outils & Cloud</h4>
+            <div class="skill-chips">
+              <span>Git</span>
+              <span>Vercel</span>
+              <span>Cloudinary</span>
+              <span>Firebase</span>
+              <span>Figma</span>
             </div>
           </div>
         </div>
 
-        <div class="experience-timeline">
-          <div class="timeline-item">
-            <div class="year">2025-2026</div>
-            <div class="content">
-              <h5>Apprentissage et  appronfondissement de frameworks Backend modernes.</h5>
-              <p>utilisationde NestJs et mongooseDB.</p>
-            </div>
+        <!-- Timeline -->
+        <div class="timeline">
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2025 - 2026</div>
+            <div class="tl-desc">Backends complexes avec NestJS, Gemini AI, MongoDB Atlas Vector Search</div>
           </div>
-
-          <div class="timeline-item">
-            <div class="year">2024-2025</div>
-            <div class="content">
-              <h5>Appronfondissement des frameworks modernes.</h5>
-              <p>Spécialisation Angular et utilisation dans des projets concrets.</p>
-            </div>
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2024 - 2025</div>
+            <div class="tl-desc">Spécialisation Angular 18 - PWA, Signals, standalone components</div>
           </div>
-          
-          <div class="timeline-item">
-            <div class="year">2023-2024</div>
-            <div class="content">
-              <h5>Appronfondissement des frameworks modernes.</h5>
-              <p>Spécialisation React/Next.JS et utilisation dans des projets concrets.</p>
-            </div>
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2023 - 2024</div>
+            <div class="tl-desc">Maîtrise React / Next.js et projets fullstack concrets</div>
           </div>
-          
-          <div class="timeline-item">
-            <div class="year">2022-2023</div>
-            <div class="content">
-              <h5>Début développement web</h5>
-              <p>Formation intensive au javaScript, html, css.</p>
-            </div>
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2022 - 2023</div>
+            <div class="tl-desc">Premiers pas - JavaScript, HTML, CSS, bases du web</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-number">15+</div>
-        <div class="stat-label">Projets réalisés</div>
-        <div class="stat-desc">Applications web complètes</div>
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-item glass">
+        <span class="stat-num">15+</span>
+        <span class="stat-lbl">Projets livrés</span>
       </div>
-      
-      <div class="stat">
-        <div class="stat-number">3+</div>
-        <div class="stat-label">Années d'expérience</div>
-        <div class="stat-desc">Développement professionnel</div>
+      <div class="stat-item glass">
+        <span class="stat-num">3+</span>
+        <span class="stat-lbl">Années d'expérience</span>
       </div>
-      
-      <div class="stat">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Projets livrés</div>
-        <div class="stat-desc">Respect des délais</div>
+      <div class="stat-item glass">
+        <span class="stat-num">100%</span>
+        <span class="stat-lbl">Délais respectés</span>
       </div>
-      
-      <div class="stat">
-        <div class="stat-number">24/7</div>
-        <div class="stat-label">Support client</div>
-        <div class="stat-desc">Disponibilité garantie</div>
+      <div class="stat-item glass">
+        <span class="stat-num">∞</span>
+        <span class="stat-lbl">Passion du code</span>
       </div>
     </div>
+
   </div>
 </section>

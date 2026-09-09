@@ -10,25 +10,32 @@ import { Component } from '@angular/core';
 export class ServicesComponent {
   services = [
     {
-      icon: 'fas fa-laptop-code',
-      title: 'Développement Web',
-      desc: 'Création d\'applications web modernes et responsives avec les dernières technologies.',
-      features: ['Sites vitrines', 'Applications SPA', 'E-commerce', 'Dashboards'],
-      technologies: ['React', 'Angular', 'TypeScript', 'CSS3']
+      icon: 'fa-solid fa-display',
+      title: 'Développement Frontend',
+      desc: "Interfaces modernes, rapides et accessibles - SPA, PWA, dark mode, animations soignées.",
+      features: ['Applications SPA / PWA', 'Responsive mobile-first', 'Animations & micro-interactions', 'Performance & Core Web Vitals'],
+      technologies: ['Angular 18', 'React', 'TypeScript', 'SCSS']
     },
     {
-      icon: 'fas fa-server',
+      icon: 'fa-solid fa-server',
       title: 'API & Backend',
-      desc: 'Développement d\'APIs robustes et d\'architectures backend scalables.',
-      features: ['API REST', 'Base de données', 'Authentification', 'Sécurité'],
-      technologies: ['NestJs', 'Node.js', 'MongoDB', 'PostgreSQL']
+      desc: "APIs RESTful robustes, authentification sécurisée, et bases de données optimisées.",
+      features: ['API REST sécurisée (JWT)', 'Architecture NestJS modulaire', 'MongoDB / MySQL', 'Emails transactionnels'],
+      technologies: ['NestJS', 'Node.js', 'MongoDB', 'Nodemailer']
     },
     {
-      icon: 'fas fa-cloud-arrow-up',
-      title: 'Déploiement Cloud',
-      desc: 'Mise en production et hébergement sur les plateformes cloud modernes.',
-      features: ['CI/CD', 'Monitoring', 'Optimisation', 'Maintenance'],
-      technologies: ['AWS', 'Docker', 'Git', 'Nginx']
+      icon: 'fa-solid fa-rocket',
+      title: 'Déploiement & Cloud',
+      desc: "Mise en production rapide, CI/CD, monitoring et maintenance de vos applications.",
+      features: ['Déploiement Vercel / Railway', 'Variables d\'environnement sécurisées', 'Cloudinary (images/vidéos)', 'Optimisation des performances'],
+      technologies: ['Vercel', 'Cloudinary', 'Firebase', 'Git']
     }
+  ];
+
+  process = [
+    { title: 'Analyse', desc: 'Étude de vos besoins et objectifs' },
+    { title: 'Design', desc: 'Maquettes et architecture technique' },
+    { title: 'Développement', desc: 'Codage propre et testé' },
+    { title: 'Livraison', desc: 'Déploiement et suivi' },
   ];
 }

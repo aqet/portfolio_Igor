@@ -1,129 +1,148 @@
 <section class="projects" @fade id="projects">
   <div class="container">
+
     <div class="section-header">
-      <!-- <span class="section-tag">Portfolio</span> -->
-      <h2>Mes Projets Réalisés</h2>
-      <p class="section-subtitle">
-        Découvrez une sélection de mes réalisations récentes et les technologies utilisées
-      </p>
+      <span class="label">// mes réalisations</span>
+      <h2>Projets <span class="accent">sélectionnés</span></h2>
+      <p class="sub">Des applications fullstack construites pour résoudre de vrais problèmes.</p>
     </div>
 
-    <div class="projects-showcase">
-      <div class="project-item" *ngFor="let p of projects; let i = index" [class.reverse]="i % 2 === 1">
-        <div class="project-visual">
-          <div class="project-gallery">
-            <div class="gallery-main">
-              <img [src]="selectedImages[i] || p.gallery[0]" [alt]="p.title"
-                (click)="openPreview(selectedImages[i] || p.gallery[0])">
-            </div>
-
-            <div class="project-actions" *ngIf="p.demoUrl || p.codeUrlF || p.codeUrlB">
-              <a [href]="p.codeUrlF" class="link-btn code" *ngIf="p.codeUrlF">
-                <span>Code Frontend</span>
-                <i class="fa-solid fa-code" style="color: rgb(27, 27, 27);"></i>
-              </a>
-              <a [href]="p.codeUrlB" class="link-btn code" *ngIf="p.codeUrlB">
-                <span>Code Backend</span>
-                <i class="fa-solid fa-code" style="color: rgb(27, 27, 27);"></i>
-              </a>
-              <a [href]="p.demoUrl" class="link-btn demo" *ngIf="p.demoUrl">
-                <span>Demo</span>
-                <i>🔗</i>
-              </a>
-              <a [href]="p.siteUrl" class="link-btn demo" *ngIf="p.siteUrl">
-                <span>Site</span>
-                <i><i class="fa-solid fa-link" style="color: rgb(27, 27, 27);"></i></i>
-              </a>
-            </div>
-
-          </div>
-          <div class="gallery-thumbs" *ngIf="p.gallery.length > 1">
-            <img *ngFor="let image of p.gallery" [src]="image" [alt]="p.title + ' aperçu'"
-              [class.active]="(selectedImages[i] || p.gallery[0]) === image" (click)="setMainImage(i, image)">
-          </div>
+    <div class="timeline">
+      <div
+        class="tl-item"
+        *ngFor="let p of projects; let i = index"
+      >
+        <!-- Numéro + ligne verticale -->
+        <div class="tl-spine">
+          <span class="tl-num">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <div class="tl-line"></div>
         </div>
 
-        <div class="project-info">
-          <div class="project-number">0{{ i + 1 }}</div>
-          <div class="project-header">
-            <h3>{{ p.title }}</h3>
-            <!-- <div class="project-status" [class]="p.status">{{ p.statusLabel }}</div> -->
+        <!-- Card principale -->
+        <div class="tl-card">
+
+          <!-- Visuel -->
+          <div class="tl-visual">
+            <div class="img-wrap">
+              <img
+                [src]="selectedImages[i] || p.gallery[0]"
+                [alt]="p.title"
+                (click)="openPreview(selectedImages[i] || p.gallery[0])"
+              />
+              <div (click)="openPreview(selectedImages[i] || p.gallery[0])" class="img-hover">
+                <button aria-label="Agrandir">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+              <span class="status-badge" [class.live]="p.statusLabel === 'En production'">
+                {{ p.statusLabel }}
+              </span>
+            </div>
+
+            <div class="thumbs" *ngIf="p.gallery.length > 1">
+              <button
+                class="thumb"
+                *ngFor="let img of p.gallery"
+                [class.active]="(selectedImages[i] || p.gallery[0]) === img"
+                (click)="setMainImage(i, img)"
+              >
+                <img [src]="img" [alt]="p.title" />
+              </button>
+            </div>
           </div>
 
-          <p class="project-description">{{ p.shortDesc }}</p>
-          <p class="project-detail-text">{{ p.longDescription }}</p>
-
-          <div class="project-highlights">
-            <div class="highlight-card">
-              <h4>Ce que fait ce projet</h4>
-              <p>{{ p.whyItMatters }}</p>
+          <!-- Infos -->
+          <div class="tl-info">
+            <div class="info-head">
+              <h3>{{ p.title }}</h3>
+              <div class="links">
+                <a
+                  *ngIf="p.codeUrlF"
+                  [href]="p.codeUrlF"
+                  target="_blank"
+                  rel="noopener"
+                  class="lnk"
+                  aria-label="Code Frontend"
+                >
+                  <i class="fa-brands fa-github"></i> Frontend
+                </a>
+                <a
+                  *ngIf="p.codeUrlB"
+                  [href]="p.codeUrlB"
+                  target="_blank"
+                  rel="noopener"
+                  class="lnk"
+                  aria-label="Code Backend"
+                >
+                  <i class="fa-brands fa-github"></i> Backend
+                </a>
+                <a
+                  *ngIf="p.siteUrl"
+                  [href]="p.siteUrl"
+                  target="_blank"
+                  rel="noopener"
+                  class="lnk live"
+                  aria-label="Voir le site"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                </a>
+              </div>
             </div>
-            <div class="highlight-card">
-              <h4>Points clés</h4>
-              <ul>
-                <li *ngFor="let feature of p.features">{{ feature }}</li>
+
+            <p class="short">{{ p.shortDesc }}</p>
+
+            <div class="expandable" [class.open]="expandedCards[i]">
+              <p class="long">{{ p.longDescription }}</p>
+              <div class="why-block">
+                <i class="fa-solid fa-lightbulb"></i>
+                <p>{{ p.whyItMatters }}</p>
+              </div>
+              <ul class="feat-list">
+                <li *ngFor="let f of p.features">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>{{ f }}</span>
+                </li>
               </ul>
             </div>
-          </div>
 
-          <div class="project-features">
-            <div class="feature" *ngFor="let feature of p.features">
-              <span class="check"><i class="fa-regular fa-circle-check" style="color: rgb(249 115 22);"></i></span>
-              <span>{{ feature }}</span>
+            <div class="stack">
+              <span *ngFor="let t of p.technologies">{{ t }}</span>
             </div>
+
+            <button class="more-btn" (click)="toggleCard(i)">
+              {{ expandedCards[i] ? 'Réduire' : 'Voir les détails' }}
+              <i class="fa-solid" [class.fa-angle-up]="expandedCards[i]" [class.fa-angle-down]="!expandedCards[i]"></i>
+            </button>
           </div>
 
-          <div class="project-tech">
-            <span class="tech-tag" *ngFor="let tech of p.technologies">{{ tech }}</span>
-          </div>
-
-          <!-- <div class="project-footer">
-            <div class="project-date">{{ p.date }}</div>
-            <a [href]="p.codeUrl" class="project-btn">
-              <span>Voir détails</span>
-              <i class="arrow">→</i>
-            </a>
-          </div> -->
         </div>
       </div>
     </div>
 
-    <!-- <div class="projects-stats">
-      <div class="stat">
-        <div class="stat-number">{{ projects.length }}+</div>
-        <div class="stat-label">Projets terminés</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Clients satisfaits</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">24h</div>
-        <div class="stat-label">Temps de réponse</div>
-      </div>
-    </div> -->
-    <div class="cta-section">
-      <h3></h3>
-      <button class="cta-btn">
-        <span><a style="text-decoration: none; color: initial;" href="https://github.com/aqet?tab=repositories">Voir
-            plus sur mon GitHub</a></span>
-        <i class="fa-solid fa-arrow-right-long"></i>
+    <!-- Footer CTA -->
+    <div class="footer-cta">
+      <a
+        href="https://github.com/aqet?tab=repositories"
+        target="_blank"
+        rel="noopener"
+        class="btn-ghost"
+      >
+        <i class="fa-brands fa-github"></i> Voir sur GitHub
+      </a>
+      <button class="btn-primary" (click)="scrollTo('contact')">
+        Discutons de votre projet <i class="fa-solid fa-arrow-right-long"></i>
       </button>
     </div>
-    <div class="cta-section">
-      <h3>Vous avez un projet en tête ?</h3>
-      <p>Transformons ensemble vos idées en réalité digitale</p>
-      <button class="cta-btn">
-        <span (click)="scrollTo('contact')">Discutons de votre projet</span>
-        <i class="fa-solid fa-arrow-right-long"></i>
-      </button>
-    </div>
+
   </div>
 
-  <div class="image-preview-backdrop" *ngIf="previewImage" (click)="closePreview()">
-    <div class="image-preview-card" (click)="$event.stopPropagation()">
-      <button class="preview-close" type="button" (click)="closePreview()" aria-label="Fermer l’image">✕</button>
-      <img [src]="previewImage" alt="Aperçu en grand format">
+  <!-- Lightbox -->
+  <div class="lightbox" *ngIf="previewImage" (click)="closePreview()">
+    <div class="lb-box" (click)="$event.stopPropagation()">
+      <button class="lb-close" (click)="closePreview()" aria-label="Fermer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img [src]="previewImage" alt="Aperçu" />
     </div>
   </div>
 </section>

@@ -1,86 +1,104 @@
+<!-- ============ NAVBAR ============ -->
 <nav class="navbar" [class.scrolled]="isScrolled">
-  <div class="logo">TIENTCHEU Igor</div>
+  <div class="nav-logo" (click)="scrollTo('top')">
+    <span class="logo-bracket">&lt;</span>Igor<span class="logo-bracket">/&gt;</span>
+  </div>
 
-  <ul class="nav-links" *ngIf="!isMobile">
-    <li (click)="scrollTo('top'); closeMenu()">Accueil</li>
-    <li (click)="scrollTo('about'); closeMenu()">À propos</li>
-    <li (click)="scrollTo('services'); closeMenu()">Services</li>
-    <li (click)="scrollTo('projects'); closeMenu()">Projets</li>
-    <li (click)="scrollTo('contact'); closeMenu()">Contact</li>
+  <ul class="nav-links" [class.open]="isMenuOpen">
+    <li (click)="scrollTo('top');    closeMenu()">Accueil</li>
+    <li (click)="scrollTo('about');  closeMenu()">À propos</li>
+    <li (click)="scrollTo('services');closeMenu()">Services</li>
+    <li (click)="scrollTo('projects');closeMenu()">Projets</li>
+    <li (click)="scrollTo('contact');closeMenu()">Contact</li>
   </ul>
 
-  <div class="nav-right">
-    <button class="theme-toggle" (click)="toggleTheme()">
-      {{ currentTheme === 'dark' ? 'Clair' : 'Sombre' }}
+  <div class="nav-actions">
+    <button class="theme-btn" (click)="toggleTheme()" [attr.aria-label]="'Passer en mode ' + (currentTheme === 'dark' ? 'clair' : 'sombre')">
+      <i class="fa-solid" [class.fa-sun]="currentTheme === 'dark'" [class.fa-moon]="currentTheme === 'light'"></i>
     </button>
-
-    <button class="burger-menu" (click)="toggleMenu()" [class.active]="!isMobile">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="burger" (click)="toggleMenu()" [class.open]="isMenuOpen" aria-label="Menu">
+      <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<section class="hero" @fadeIn>
-  <div class="hero-content" id="top">
-    <div class="left">
-      <div class="greeting">
-        <!-- <span class="wave">👋</span> -->
-        <h2>Bonjour, je suis</h2>
-      </div>
-      <h1>TIENTCHEU Igor</h1>
-      <h3>Développeur Full Stack</h3>
+<!-- Overlay mobile -->
+<div class="nav-overlay" [class.visible]="isMenuOpen" (click)="closeMenu()"></div>
 
-      <p class="subtitle">
-        Passionné par le développement web moderne, je crée des solutions digitales innovantes
-        qui transforment vos idées en applications performantes et intuitives.
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" @fadeIn>
+  <!-- Orbes de fond -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="grid-bg"   aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <!-- Texte -->
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        Disponible pour de nouveaux projets
+      </div>
+
+      <h1>
+        <span class="line-1">TIENTCHEU</span>
+        <span class="line-2">Igor</span>
+        <span class="line-3">Développeur <span class="grad">Full Stack</span></span>
+      </h1>
+
+      <p class="hero-sub">
+        Je conçois des applications web modernes, performantes et pensées pour durer -
+        du front-end interactif aux architectures back-end robustes.
       </p>
 
-      <div class="skills-preview">
-        <span class="skill">Angular</span>
-        <span class="skill">React</span>
-        <span class="skill">NestJs</span>
-        <span class="skill">Node.js</span>
-        <span class="skill">TypeScript</span>
+      <div class="hero-chips">
+        <span>Angular</span>
+        <span>React</span>
+        <span>NestJS</span>
+        <span>Node.js</span>
+        <span>TypeScript</span>
+        <span>MongoDB</span>
       </div>
 
-      <div class="cta">
-        <button class="primary" (click)="scrollTo('contact')">
-          <span>Collaborons ensemble</span>
-          <i class="fa-solid fa-arrow-right-long"></i>
+      <div class="hero-cta">
+        <button class="btn-primary" (click)="scrollTo('contact')">
+          Collaborons <i class="fa-solid fa-arrow-right-long"></i>
         </button>
-        <button class="secondary" (click)="scrollTo('projects')">
+        <button class="btn-ghost" (click)="scrollTo('projects')">
           Voir mes projets
         </button>
       </div>
-
-      <!-- <div class="stats">
-        <div class="stat">
-          <span class="number">3+</span>
-          <span class="label">Années d'expérience</span>
-        </div>
-        <div class="stat">
-          <span class="number">15+</span>
-          <span class="label">Projets réalisés</span>
-        </div>
-      </div> -->
     </div>
 
-    <div class="right">
-      <div class="avatar-wrapper">
-        <div class="avatar">
-          <img src="me.png" alt="Igor TIENTCHEU"/>
+    <!-- Avatar -->
+    <div class="hero-visual">
+      <div class="avatar-ring">
+        <div class="avatar-img">
+          <img src="me.png" alt="Igor TIENTCHEU - Développeur Full Stack" />
         </div>
-        <div class="ring"></div>
-        <div class="floating-elements">
-          <div class="element code"> <img src="/nestjs.png" alt=""> </div>
-          <div class="element react"> <img src="/angular.png" alt=""></div>
-          <div class="element node"> <img src="/nextjs.png" alt=""></div>
-          <div class="element mongoosedb"> <img src="/mongoosedb.png" alt=""></div>
-          <div class="element github"> <img src="/github.png" alt=""></div>
-        </div>
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+      </div>
+
+      <!-- Floating tech badges -->
+      <div class="badge b-nestjs">
+        <img src="/nestjs.png" alt="NestJS" /><span>NestJS</span>
+      </div>
+      <div class="badge b-angular">
+        <img src="/angular.png" alt="Angular" /><span>Angular</span>
+      </div>
+      <div class="badge b-mongo">
+        <img src="/mongoosedb.png" alt="MongoDB" /><span>MongoDB</span>
+      </div>
+      <div class="badge b-next">
+        <img src="/nextjs.png" alt="Next.js" /><span>Next.js</span>
       </div>
     </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint" (click)="scrollTo('about')">
+    <div class="scroll-wheel"></div>
+    <span>Défiler</span>
   </div>
 </section>

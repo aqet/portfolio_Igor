@@ -3,7 +3,6 @@ import {
   trigger, transition, style, animate
 } from '@angular/animations';
 import { DOCUMENT } from '@angular/common';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
@@ -17,7 +16,7 @@ import { NgIf } from '@angular/common';
       ])
     ])
   ],
-  imports: [NgIf]
+  imports: []
 })
 export class HeroComponent {
   isScrolled = false;
@@ -55,7 +54,7 @@ export class HeroComponent {
   }
 
   toggleMenu(): void {
-    this.isMobile = !this.isMobile;
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   closeMenu(): void {

@@ -1,7 +1,15 @@
 .footer {
   text-align: center;
-  padding: 1.5rem 0;
-  background: #020817;
-  color: #9ca3af;
-  font-size: 0.9rem;
+  padding: 2rem 0;
+  background: var(--c-bg);
+  border-top: 1px solid var(--c-border);
+  color: var(--c-txt-3);
+  font-size: .85rem;
+  letter-spacing: .04em;
+  position: relative;
+  z-index: 1;
+
+  span {
+    color: var(--c-accent);
+  }
 }
