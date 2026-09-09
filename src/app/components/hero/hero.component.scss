@@ -131,9 +131,13 @@ body.light-theme .navbar.scrolled {
   backdrop-filter: blur(4px);
   z-index: 98;
   opacity: 0;
+  pointer-events: none;
   transition: opacity var(--t-base);
 
-  &.visible { opacity: 1; }
+  &.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
 /* =============================================
@@ -178,7 +182,7 @@ body.light-theme .navbar.scrolled {
 /* Grid background */
 .grid-bg {
   position: absolute;
-  inset: 0;
+  // inset: 0;
   background-image:
     linear-gradient(var(--c-border) 1px, transparent 1px),
     linear-gradient(90deg, var(--c-border) 1px, transparent 1px);
@@ -353,6 +357,11 @@ h1 {
   justify-content: center;
 }
 
+/* Sur desktop les badges sont absolus, le wrapper est transparent */
+.badges-row {
+  display: contents; /* les enfants s'insèrent dans le flux du parent .hero-visual */
+}
+
 .avatar-ring {
   position: relative;
   width: 280px;
@@ -517,7 +526,10 @@ h1 {
     li { font-size: 1.1rem; }
   }
 
-  .nav-overlay { display: block; }
+  .nav-overlay {
+    display: block;
+    pointer-events: none; /* activé seulement via .visible */
+  }
   .burger { display: flex; }
 
   .hero-inner {
@@ -536,13 +548,39 @@ h1 {
   .hero-sub { max-width: 480px; }
 
   .hero-visual {
-    width: 260px;
-    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: auto;
+    height: auto;
+    position: static;
   }
 
-  .avatar-ring { width: 200px; height: 200px; }
+  .avatar-ring {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+  }
 
-  .badge { display: none; }
+  /* Badges : quittent le mode absolu, s'affichent en ligne */
+  .badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .45rem;
+  }
+
+  .badge {
+    position: static !important;
+    animation: none !important;
+    transform: none !important;
+
+    &.b-nestjs, &.b-angular, &.b-mongo, &.b-next {
+      top: auto; left: auto; right: auto; bottom: auto;
+    }
+  }
 
   .scroll-hint { display: none; }
 }
