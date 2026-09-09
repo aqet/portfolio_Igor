@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+﻿import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { DOCUMENT, NgFor, NgIf } from '@angular/common';
 
@@ -29,9 +29,9 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       shortDesc:
         'Une interface moderne pour organiser, prioriser et suivre ses tâches en toute simplicité.',
       longDescription:
-        "Ce projet met en avant l'expérience utilisateur avec une interface claire, rapide et responsive. Il permet de gérer des tâches, de suivre leur avancement et d'avoir une vision globale de l'activité quotidienne.",
+        'Ce projet met en avant l’expérience utilisateur avec une interface claire, rapide et responsive. Il permet de gérer des tâches, de suivre leur avancement et d’avoir une vision globale de l’activité quotidienne.',
       whyItMatters:
-        "Je l'ai conçu pour montrer comment une application de productivité peut être à la fois utile, agréable à utiliser et facile à comprendre.",
+        'Je l’ai conçu pour montrer comment une application de productivité peut être à la fois utile, agréable à utiliser et facile à comprendre.',
       gallery: ['todo-image-front.png', 'todo-image-auth.png', 'todo-image-profil.png'],
       features: [
         'Authentification',
@@ -53,9 +53,9 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       shortDesc:
         'Une API robuste pour gérer les tâches, sécuriser les accès et automatiser les notifications.',
       longDescription:
-        "Ce backend centralise la logique métier, l'authentification JWT, la persistance des données et les communications email. Il sert de colonne vertébrale à l'application et garantit une structure propre et évolutive.",
+        'Ce backend centralise la logique métier, l’authentification JWT, la persistance des données et les communications email. Il sert de colonne vertébrale à l’application et garantit une structure propre et évolutive.',
       whyItMatters:
-        "Il illustre ma façon de concevoir des services fiables, sécurisés et prêts à évoluer en production.",
+        'Il illustre ma façon de concevoir des services fiables, sécurisés et prêts à évoluer en production.',
       gallery: ['todo-image-back.png'],
       features: [
         'Authentification JWT',
@@ -75,11 +75,11 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     {
       title: 'Alert Proche',
       shortDesc:
-        'PWA citoyenne pour signaler disparitions, abus et urgences impliquant des enfants ou personnes vulnérables le monde - avec SOS géolocalisé en temps réel.',
+        'Une plateforme citoyenne moderne pour signaler et suivre les alertes liées à la protection des mineurs au Cameroun.',
       longDescription:
-        "AlertProche combine un système de signalement communautaire, un feed social et un SOS d'urgence avec géolocalisation en temps réel. Les utilisateurs publient des cas (disparition, abus, prévention), reçoivent des alertes de proximité dans un rayon d'1km, et envoient leur position GPS à leurs contacts de confiance. La recherche par image via embeddings vectoriels Gemini permet de retrouver des publications similaires à une photo uploadée.",
+        'Alert Proche est une solution complète qui combine une interface utilisateur fluide et une logique métier robuste pour faciliter la gestion des alertes, l’accès sécurisé aux comptes et le suivi des signalements. Ce projet illustre une application pensée pour être utile, fiable et évolutive dans un contexte réel.',
       whyItMatters:
-        "Ce projet illustre ma capacité à concevoir une application fullstack complexe et socialement utile : double stack notifications (FCM + Web Push VAPID), upload atomique avec rollback Cloudinary, modération IA, recherche vectorielle, et PWA installable avec Service Worker custom.",
+        'Il montre une capacité à concevoir une application complète, moderne et orientée utilisateur, avec une structure claire et une expérience cohérente.',
       gallery: [
         'alertproche-home.png',
         'alertproche-detaille-post.png',
@@ -88,33 +88,25 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         'alertproche-avis.png',
       ],
       features: [
-        'SOS géolocalisé avec appui long et décompte annulable',
-        'Alertes push de proximité dans un rayon de 1km',
-        'Recherche par image (embeddings Gemini + MongoDB Atlas Vector Search)',
-        'Double stack notifications : FCM Android + Web Push VAPID (PWA)',
-        'Feed social : médias mixtes, likes, commentaires, scroll infini',
-        'Upload atomique avec rollback Cloudinary en cas d\'échec',
-        'Modération de contenu assistée par Gemini AI',
-        'PWA installable avec Service Worker custom et mode hors-ligne',
+        'Signalement suivi des alertes',
+        'Authentification sécurisée',
+        'Interface responsive',
+        'Tableau de bord utilisateur',
       ],
       technologies: [
-        'Angular 18',
+        'Angular',
         'TypeScript',
         'NestJS',
-        'MongoDB Atlas',
-        'Cloudinary',
-        'Gemini AI',
-        'Firebase FCM',
-        'Web Push VAPID',
-        'PWA / Capacitor',
+        'MongoDB',
+        'cloudinary'
       ],
       status: 'completed',
-      statusLabel: 'En production',
+      statusLabel: 'Terminé',
       date: 'mai 2026',
       demoUrl: '',
       codeUrlF: 'https://github.com/aqet/AlertProche',
       codeUrlB: 'https://github.com/aqet/AlertProche-api',
-      siteUrl: 'https://alert-proche.vercel.app/',
+      siteUrl: 'https://alertproche.com/',
     },
   ];
 
@@ -161,3 +153,4 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     }
   }
 }
+

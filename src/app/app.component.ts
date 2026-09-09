@@ -39,7 +39,7 @@ export class AppComponent {
   hero = {
     name: 'TIENTCHEU Igor',
     role: 'Software Developer',
-    tagline: 'Hello. I’m Jensen — I build clean, fast and friendly web apps.'
+    tagline: 'Hello. I’m Jensen - I build clean, fast and friendly web apps.'
   };
 
   stats: Stat[] = [
@@ -56,7 +56,7 @@ export class AppComponent {
   ];
 
   blocks: Block[] = [
-    { title: 'What I do', desc: 'Frontend, UX, and clean architecture — with a focus on performance and clarity.', cta: 'See my work' },
+    { title: 'What I do', desc: 'Frontend, UX, and clean architecture - with a focus on performance and clarity.', cta: 'See my work' },
     { title: 'What I care about', desc: 'Fast loading, accessibility, and a delightful experience on every device.', cta: 'Talk with me' }
   ];
 
